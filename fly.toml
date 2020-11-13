@@ -1,0 +1,27 @@
+# fly.toml file generated for summer-moon-2081 on 2020-11-11T23:45:04-09:00
+
+app = "summer-moon-2081"
+
+[build]
+  builtin = "ruby"
+
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = "80"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = "443"
+
+  [[services.tcp_checks]]
+    interval = 10000
+    timeout = 2000
