@@ -4,18 +4,14 @@
       <tr>
         <th>Server</th>
         <th>Online</th>
-        <th>PVP</th>
-        <th>XP Modifier</th>
         <th>Last Heartbeat</th>
       </tr>
     </thead>
     <tbody>
     <% @list.each do |item| %>
       <tr>
-        <td><%= item[:server] %></td>
-        <td><%= item[:online] %></td>
-        <td><%= item[:pk_server] %></td>
-        <td><%= item[:xp_modifier] %></td>
+        <td><%= item[:world_name] %></td>
+        <td><%= item[:online_count] %></td>
         <td><%= item[:updated_at] %></td>
       </tr>
     <% end %>
