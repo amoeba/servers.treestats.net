@@ -13,7 +13,7 @@ get '/' do
   erb :index
 end
 
-post '/heartbeat' do
+post '/' do
   json = JSON.parse(request.body.read)
 
   heartbeat = {
@@ -23,9 +23,9 @@ post '/heartbeat' do
     :pk_server => json["pk_server"],
     :updated_at => Time.now.utc.iso8601
   }
-  
+
   heartbeats.push(heartbeat);
-  
+
   status 200
-  return ""
+  return { "response": "success"}.to_json
 end
