@@ -18,8 +18,8 @@ post '/' do
   json = JSON.parse(request.body.read)
 
   heartbeat = {
-    :WorldName => json["server"],
-    :OnlineCount => json["online"],
+    :world_name => json["WorldName"],
+    :online_count => json["OnlineCount"],
     :updated_at => Time.now.utc.iso8601
   }
 
